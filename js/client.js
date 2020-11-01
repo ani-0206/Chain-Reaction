@@ -500,12 +500,20 @@ function tempAlert(msg,color,duration){
 	el.setAttribute("class","tempAlert");
     setTimeout(function(){
 		el.parentNode.removeChild(el);
+	    /*
 		initialiseGame(turns, false);
 
 		allJoined = false;// all tabs have to draw the whole gameplay
 	  	socket.emit('endGame', playingTotalPlayer+1, availableTotalPlayer);
 		
 		lockOnEndGame = false;
+	    */
+	    
+		allJoined = false;// all tabs have to draw the whole gameplay
+	  	socket.emit('endGame', playingTotalPlayer+1, availableTotalPlayer);
+		
+		lockOnEndGame = false;
+	        initialiseGame(turns, allJoined);
 
     },duration);
 	document.body.appendChild(el); 
