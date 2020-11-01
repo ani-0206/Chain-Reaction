@@ -469,7 +469,10 @@ function exclude(){
             if(ballColor[i][j] == colors[t]) count++;
           }
         }
-        if(count == 0) validTurn[t] = false;
+        if(count == 0) {
+        	validTurn[t] = false;
+        	updateTurn();
+        }
     }
 }
 
